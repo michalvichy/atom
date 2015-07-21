@@ -1,0 +1,21 @@
+"*":
+  "exception-reporting":
+    userId: "e174c34f-c3f8-3a4b-c424-2f81e564f609"
+  welcome:
+    showOnStartup: false
+  editor:
+    fontSize: 11
+    invisibles: {}
+    showIndentGuide: true
+    tabLength: 4
+  core:
+    themes: [
+      "atom-dark-ui"
+      "atom-dark-syntax"
+    ]
+  "autocomplete-plus": {}
+  tabs:
+    usePreviewTabs: true
+  emmet: {}
+  "atom-spotify2":
+    displayOnLeftSide: false
