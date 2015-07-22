@@ -20,3 +20,8 @@
   'Console log':
     'prefix': 'log'
     'body': 'console.log($1);'
+
+'.source.js':
+  'jQuery shorthand':
+    'prefix': '$'
+    'body': "$('$1');"
