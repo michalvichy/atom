@@ -23,5 +23,5 @@
 
 '.source.js':
   'jQuery shorthand':
-    'prefix': '$'
+    'prefix': '4'
     'body': "$('$1');"

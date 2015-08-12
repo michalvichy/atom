@@ -8,3 +8,23 @@ klif_warszawa:
   paths: [
     "/Volumes/michal.skora/htdocs/klif_warszawa"
   ]
+sexnord:
+  title: "sexnord"
+  paths: [
+    "/Volumes/michal.skora/htdocs/sexnord"
+  ]
+"xsolve-pl":
+  title: "xsolve-pl"
+  paths: [
+    "/Volumes/michal.skora/htdocs/xsolve-pl"
+  ]
+klif_gdynia:
+  title: "klif_gdynia"
+  paths: [
+    "/Volumes/michal.skora/htdocs/klif_gdynia"
+  ]
+"xsolve-blog":
+  title: "xsolve-blog"
+  paths: [
+    "/Volumes/michal.skora/htdocs/xsolve-blog"
+  ]

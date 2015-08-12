@@ -13,9 +13,18 @@
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "linter"
+    ]
   "autocomplete-plus": {}
   tabs:
     usePreviewTabs: true
   emmet: {}
   "atom-spotify2":
     displayOnLeftSide: false
+  "linter-scss-lint":
+    executablePath: "/usr/bin/scss-lint"
+  linter: {}
+  "project-manager":
+    closeCurrent: true
