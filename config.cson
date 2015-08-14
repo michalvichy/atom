@@ -28,3 +28,5 @@
   linter: {}
   "project-manager":
     closeCurrent: true
+  "tree-view":
+    hideVcsIgnoredFiles: true

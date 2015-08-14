@@ -28,3 +28,8 @@ klif_gdynia:
   paths: [
     "/Volumes/michal.skora/htdocs/xsolve-blog"
   ]
+"planet-escape":
+  title: "planet-escape"
+  paths: [
+    "/Volumes/michal.skora/htdocs/planet-escape"
+  ]
