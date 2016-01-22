@@ -1,4 +1,3 @@
-
 {CompositeDisposable} = require 'atom'
 FilesPopup = require './filesPopup'
 _ = require 'lodash'
@@ -9,13 +8,16 @@ module.exports = EnhancedTabs =
   active: false
   popup: null
   activeTab: null
+  initialized: false
 
   activate: (state) ->
     editor = atom.workspace.getActiveTextEditor()
-    @popup = new FilesPopup(editor);
-    @activeTab =
-      title: editor.getLongTitle()
-      URI: editor.getURI()
+    if (editor)
+      @popup = new FilesPopup(editor);
+      @activeTab =
+        title: editor.getLongTitle?() || editor.getTitle?()
+        URI: editor.getURI()
+      initialized = true;
     # Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
     @subscriptions = new CompositeDisposable
 
@@ -24,7 +26,15 @@ module.exports = EnhancedTabs =
 
 
     @subscriptions.add atom.workspace.observeTextEditors (editor)=>
-      title = editor.getLongTitle()
+      if (!initialized && editor)
+        @popup = new FilesPopup(editor);
+        @activeTab =
+          title: editor.getLongTitle?() || editor.getTitle?()
+          URI: editor.getURI()
+        initialized = true;
+      if (!editor)
+        return;
+      title = editor.getLongTitle?() || editor.getTitle?()
       URI = editor.getURI()
       # skiping new files
       if (URI == undefined)
@@ -36,7 +46,7 @@ module.exports = EnhancedTabs =
 
     @subscriptions.add atom.workspace.onDidChangeActivePaneItem (item)=>
       return unless item
-      title = item.getLongTitle?()
+      title = item.getLongTitle?() || item.getTitle?()
       URI = item.getURI?()
       return unless title && URI
       @addToOpenedTabs(@activeTab)
@@ -62,16 +72,35 @@ module.exports = EnhancedTabs =
           @popup.selectPreviousItemView()
         else
           @popup.selectNextItemView()
-      when 17 then @popup.confirmSelection()
+      when 17
+        if @active
+          @popup.confirmSelection()
+      when 27
+        @cancelPopup()
+
       # else @popup.cancel()
+
+  onclick: (event) ->
+    # this will only run when clicking away from the list
+    # because the click handler on SimpleListView does a stopPropagation()
+    @cancelPopup()
+
+  cancelPopup: ->
+    if @popup
+      @popup.cancel()
+      @removeCommandDispatcher()
+      @active = false
 
   registerCommandDispatcher: ->
     @onkeyup.first = 0;
-    @listener = @onkeyup.bind(this);
-    document.addEventListener 'keyup', @listener
+    @listenerKeyup = @onkeyup.bind(this);
+    @listenerClick = @onclick.bind(this);
+    document.addEventListener 'keyup', @listenerKeyup
+    document.addEventListener 'click', @listenerClick
 
   removeCommandDispatcher: ->
-    document.removeEventListener 'keyup', @listener
+    document.removeEventListener 'keyup', @listenerKeyup
+    document.removeEventListener 'click', @listenerClick
 
 
   openedTabsMoveToTop: (elem)->
@@ -87,7 +116,15 @@ module.exports = EnhancedTabs =
     enhancedTabsViewState: @enhancedTabsView.serialize()
 
   showTabsNav: ->
-    @popup.setItems(@openedTabs);
+    if (!@popup)
+      return;
+    items =_.filter( @openedTabs
+            (item)->
+              console.log(item.URI)
+              return item.URI != @activeTab.URI
+            @)
+
+    @popup.setItems(items);
     @popup.onConfirm = (item)=>
       atom.workspace.open(item.URI)
       @removeCommandDispatcher()

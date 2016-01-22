@@ -1,32 +1,29 @@
 "*":
-  "exception-reporting":
-    userId: "e174c34f-c3f8-3a4b-c424-2f81e564f609"
-  welcome:
-    showOnStartup: false
+  "atom-spotify2":
+    displayOnLeftSide: false
+  "autocomplete-plus": {}
+  core:
+    destroyEmptyPanes: false
+    disabledPackages: [
+      "sync-settings"
+    ]
   editor:
-    fontSize: 11
+    fontSize: 9
     invisibles: {}
     showIndentGuide: true
     tabLength: 4
-  core:
-    themes: [
-      "atom-dark-ui"
-      "atom-dark-syntax"
-    ]
-    destroyEmptyPanes: false
-    disabledPackages: [
-      "linter"
-    ]
-  "autocomplete-plus": {}
-  tabs:
-    usePreviewTabs: true
   emmet: {}
-  "atom-spotify2":
-    displayOnLeftSide: false
+  "exception-reporting":
+    userId: "e174c34f-c3f8-3a4b-c424-2f81e564f609"
+  linter: {}
   "linter-scss-lint":
     executablePath: "/usr/bin/scss-lint"
-  linter: {}
-  "project-manager":
-    closeCurrent: true
+  "project-manager": {}
+  "sync-settings":
+    _analyticsUserId: "b7c50097-488e-48b0-a5a4-ba825c37c7a2"
+  tabs:
+    usePreviewTabs: true
   "tree-view":
-    hideVcsIgnoredFiles: true
+    hideVcsIgnoredFiles: false
+  welcome:
+    showOnStartup: false

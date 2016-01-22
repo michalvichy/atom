@@ -33,3 +33,58 @@ klif_gdynia:
   paths: [
     "/Volumes/michal.skora/htdocs/planet-escape"
   ]
+fargotex:
+  title: "fargotex"
+  paths: [
+    "/Volumes/michal.skora/htdocs/fargotex"
+  ]
+practitest:
+  title: "practitest"
+  paths: [
+    "/Volumes/michal.skora/htdocs/practitest"
+  ]
+polco:
+  title: "polco"
+  paths: [
+    "/Volumes/michal.skora/htdocs/polco"
+  ]
+"gtc-wilanow":
+  title: "gtc-wilanow"
+  paths: [
+    "/Volumes/michal.skora/htdocs/gtc-wilanow"
+  ]
+showbiz:
+  title: "showbiz"
+  paths: [
+    "/Volumes/michal.skora/htdocs/showbiz"
+  ]
+"ezycount-webpage":
+  title: "ezycount-webpage"
+  paths: [
+    "/Volumes/michal.skora/htdocs/ezycount-webpage"
+  ]
+ezycount:
+  title: "ezycount"
+  paths: [
+    "/Volumes/michal.skora/htdocs/ezycount"
+  ]
+ezyblog:
+  title: "ezyblog"
+  paths: [
+    "/Volumes/michal.skora/htdocs/ezyblog"
+  ]
+"tvn-ustawka":
+  title: "tvn-ustawka"
+  paths: [
+    "/Volumes/michal.skora/htdocs/tvn-ustawka"
+  ]
+brasswillow:
+  title: "brasswillow"
+  paths: [
+    "/Volumes/michal.skora/htdocs/brasswillow"
+  ]
+"telspan-exam":
+  title: "telspan-exam"
+  paths: [
+    "/Users/michal/workspace/telspan-exam"
+  ]

@@ -25,3 +25,23 @@
   'jQuery shorthand':
     'prefix': '4'
     'body': "$('$1');"
+
+'.source.scss':
+  'Min screen':
+    'prefix': 'ms'
+    'body': '@include min-screen($1) {$2}'
+
+'.source.scss':
+  'Max screen':
+    'prefix': 'maxs'
+    'body': '@include max-screen($1) {$2}'
+
+'.source.scss':
+  'Tablet':
+    'prefix': 'tabs'
+    'body': '@include min-screen($tablet) {$1}'
+
+'.source.scss':
+  'Desktop':
+    'prefix': 'desk'
+    'body': '@include min-screen($desktop) {$1}'

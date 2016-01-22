@@ -1,3 +1,41 @@
+## 1.3.0
+- Minor internal improvements
+- Model restructure
+
+## 1.2.0
+- Filter todos input field
+- Extract todo tags
+- Save todos as markdown table
+- Links in saved markdown
+
+## 1.1.0
+- Internal improvements
+
+## 1.0.0
+- New package owner (@mrodalgaard)
+- Total code refactor
+- Improved config
+- Options dialog
+- Update table upon save
+- TODOs in flexible table
+- Travis CI
+
+## 0.16.0
+- Use native exclude for ignoreThesePaths
+- Notification on invalid config input
+- Tab icon
+
+## 0.15.0
+- Improved default regex with full description
+- Respect imdone numbering syntax
+- Support for empty todos (e.g. // TODO)
+
+## 0.14.0
+- Group matches by regex, file or none (groupMatchesBy config)
+- Remember todo list width (rememberViewSize config)
+- Improved markdown output when saving todo list
+- Remove PHP comment endings
+
 ## 0.13.0
 - Enforce a trailing space on todos
 - Add line numbers to saved output
@@ -15,7 +53,7 @@
 - Scan progress when loading todos
 
 ## 0.10.0
-- Strip common block comment endings (e.g. '*/')
+- Strip common block comment endings
 - Truncate matches over 120 characters
 - Configurable where the pane opens with openListInDirection
 - Updated styling

@@ -7,8 +7,49 @@
 
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
-'atom-workspace':
-  'alt-shift-cmd-down': 'multi-cursor:expandDown'
-  'alt-shift-cmd-right': 'multi-cursor:skipDown'
-  'alt-shift-cmd-left': 'multi-cursor:skipUp'
-  'alt-shift-cmd-up': 'multi-cursor:expandUp'
+
+
+# OSX keymaps are different of atom's default
+# because ctrl-shift up and down are OS shortcuts for
+# mission control and application windows by default.
+'.platform-darwin atom-text-editor:not(mini)':
+
+  # Expand current cursor
+  'alt-down': 'multi-cursor:expandDown'
+  'alt-up':   'multi-cursor:expandUp'
+
+  # Move the last cursor.
+  'ctrl-alt-down':  'multi-cursor:move-last-cursor-down'
+  'ctrl-alt-right': 'multi-cursor:move-last-cursor-right'
+  'ctrl-alt-left':  'multi-cursor:move-last-cursor-left'
+  'ctrl-alt-up':    'multi-cursor:move-last-cursor-up'
+
+
+
+# Linux keybindings
+'.platform-linux atom-text-editor:not(mini)':
+
+  # Expand current cursor
+  'alt-shift-down': 'multi-cursor:expandDown'
+  'alt-shift-up':   'multi-cursor:expandUp'
+
+  # Move the last cursor.
+  'ctrl-shift-alt-down':  'multi-cursor:move-last-cursor-down'
+  'ctrl-shift-alt-right': 'multi-cursor:move-last-cursor-right'
+  'ctrl-shift-alt-left':  'multi-cursor:move-last-cursor-left'
+  'ctrl-shift-alt-up':    'multi-cursor:move-last-cursor-up'
+
+
+
+# Windows keybindings
+'.platform-win32 atom-text-editor:not(mini)':
+
+  # Expand current cursor
+  'alt-down': 'multi-cursor:expandDown'
+  'alt-up':   'multi-cursor:expandUp'
+
+  # Move the last cursor.
+  'ctrl-shift-alt-down':  'multi-cursor:move-last-cursor-down'
+  'ctrl-shift-alt-right': 'multi-cursor:move-last-cursor-right'
+  'ctrl-shift-alt-left':  'multi-cursor:move-last-cursor-left'
+  'ctrl-shift-alt-up':    'multi-cursor:move-last-cursor-up'
